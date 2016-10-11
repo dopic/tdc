@@ -1,0 +1,17 @@
+version: "2"
+services:
+    app1:
+        build: ./app
+        environment:
+            MESSAGE: "Node 1"
+    app2:
+        build: ./app
+        environment:
+            MESSAGE: "Node 2"
+    nginx:
+        build: ./nginx
+        links:
+            - app1
+            - app2
+        ports:
+            - "8080:5000"

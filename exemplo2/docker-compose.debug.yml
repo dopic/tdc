@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+  exemplo2:
+    image: exemplo2:debug
+    build:
+      context: .
+      dockerfile: Dockerfile.debug
+    ports:
+      - "5000:5000"
+    environment:
+      - REMOTE_DEBUGGING
